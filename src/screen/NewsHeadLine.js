@@ -7,7 +7,7 @@ import NewsHeadLineCard from "../components/NewsHeadLineCard";
 
 const ViewArea = styled.View`
   flex: 1;
-  background-color: #e7ecf0;
+  background-color: #fff;
 `;
 
 export default class NewsHeadLine extends Component {
@@ -29,8 +29,8 @@ export default class NewsHeadLine extends Component {
 
   componentDidMount() {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=${this.props.navigation.getParam(
-        "code"
+      `https://newsapi.org/v2/top-headlines?${this.props.navigation.getParam(
+        "source"
       )}&apiKey=${API_KEY}`
     )
       .then(response => response.json())

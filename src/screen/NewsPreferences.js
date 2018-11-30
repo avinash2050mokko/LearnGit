@@ -19,6 +19,12 @@ const Area = styled.View`
   flex-wrap: wrap;
 `;
 
+const HorizontalLine = styled.View`
+  border-bottom-width: 1;
+  border-color: #aaa;
+  padding-top: 35px;
+`;
+
 const NormalText = styled.Text`
   color: #fff;
   font-size: 20px;
@@ -55,7 +61,38 @@ export default class NewsPreferences extends Component {
                 }}
                 onPress={() =>
                   this.props.navigation.navigate("NewsHeadLine", {
+                    source: `country=${data.value}`,
                     code: data.value,
+                    country: data.name
+                  })
+                }
+              >
+                <Text
+                  style={{
+                    color: "#fff"
+                  }}
+                >
+                  {data.name}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </Area>
+          <HorizontalLine />
+          <NormalText style={{ marginBottom: 10 }}>Sources</NormalText>
+          <Area>
+            {data.sources.map((data, index) => (
+              <TouchableOpacity
+                key={index}
+                style={{
+                  padding: 8,
+                  borderRadius: 8,
+                  borderWidth: 1,
+                  borderColor: "#fff",
+                  margin: 5
+                }}
+                onPress={() =>
+                  this.props.navigation.navigate("NewsHeadLine", {
+                    source: `sources=${data.value}`,
                     country: data.name
                   })
                 }
@@ -74,18 +111,4 @@ export default class NewsPreferences extends Component {
       </ViewArea>
     );
   }
-}
-
-{
-  /*<OutLineButton
-                label={data.name}
-                key={index}
-                code={data.value}
-                onPress={() =>
-                  this.props.navigation.navigate("NewsHeadLine", {
-                    code: data.value,
-                    country: data.name
-                  })
-                }
-              />*/
 }

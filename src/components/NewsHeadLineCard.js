@@ -31,50 +31,29 @@ export default class NewsHeadLineCard extends React.Component {
     console.log("Time is ", time);
     console.log("Time", moment(time).fromNow());
     return (
-      <ScreenArea
-        style={{
-          shadowColor: "#000",
-          shadowOffset: { width: 5, height: 5 },
-          shadowOpacity: 0.3,
-          marginBottom: 10,
-          elevation: 3
-        }}
-      >
+      <ScreenArea>
         <Area>
           <Image
             style={{
               width: imageUrl === null ? 0 : 75,
               height: imageUrl === null ? 0 : 75,
-              marginRight: imageUrl === null ? 0 : 20,
-                //Some thing has change
+              marginRight: imageUrl === null ? 0 : 20
+              //Some thing has change
             }}
             source={{ uri: `${imageUrl}` }}
           />
           <CategoryLabel>{title ? title : "No Title"}</CategoryLabel>
         </Area>
-        {/*<View
+        <Text
           style={{
-            backgroundColor: "#482952",
-            width: "70%",
-            position: "absolute",
-            top: -15,
-            padding: 10,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 25,
-
-            shadowColor: "#000",
-            shadowOffset: { width: 1, height: 7 },
-            shadowOpacity: 0.3,
-            marginBottom: 10,
-            elevation: 2
+            alignSelf: "flex-end",
+            paddingTop: 30,
+            paddingBottom: 10,
+            color: "#aaa"
           }}
         >
-          <Text style={{ color: "#fff", fontWeight: "bold" }}>
-            {source ? source : "No DATA"}
-          </Text>
-        </View>*/}
-        <Text style={{ alignSelf: "flex-end" , paddingTop: 30 , paddingBottom: 10, color: '#aaa' }}>{moment(time).fromNow()}</Text>
+          {moment(time).fromNow()}
+        </Text>
       </ScreenArea>
     );
   }

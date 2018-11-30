@@ -101,3 +101,5 @@ export const category = [
   { name: "sports" },
   { name: "technology" }
 ];
+
+export const sources = [{ name: "BBC NEWS", value: "bbc-news" }];
