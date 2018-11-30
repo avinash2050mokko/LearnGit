@@ -46,7 +46,7 @@ export default class NewsHeadLineCard extends React.Component {
               width: imageUrl === null ? 0 : 75,
               height: imageUrl === null ? 0 : 75,
               marginRight: imageUrl === null ? 0 : 20,
-              borderRadius: 75
+                //Some thing has change
             }}
             source={{ uri: `${imageUrl}` }}
           />
