@@ -14,8 +14,14 @@ const ViewArea = styled.View`
 `;
 
 const Area = styled.View`
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Section = styled.View`
+  flex-wrap: wrap;
+  flex-direction: row;
 `;
 
 const HorizontalLine = styled.View`
@@ -27,6 +33,7 @@ const HorizontalLine = styled.View`
 const NormalText = styled.Text`
   color: #fff;
   font-size: 20px;
+  margin-bottom: 20px;
 `;
 
 export default class NewsPreferences extends Component {
@@ -44,66 +51,70 @@ export default class NewsPreferences extends Component {
   render() {
     return (
       <ViewArea>
-        <NormalText style={{ marginBottom: 10 }}>Select Country</NormalText>
         <ScrollView showsVerticalScrollIndicator={false}>
           <Area>
-            {data.country.map((data, index) => (
-              <TouchableOpacity
-                key={index}
-                style={{
-                  padding: 8,
-                  borderRadius: 8,
-                  borderWidth: 1,
-                  borderColor: "#fff",
-                  margin: 5
-                }}
-                onPress={() =>
-                  this.props.navigation.navigate("NewsHeadLine", {
-                    source: `country=${data.value}`,
-                    code: data.value,
-                    country: data.name
-                  })
-                }
-              >
-                <Text
+            <NormalText>Select Country</NormalText>
+            <Section>
+              {data.country.map((data, index) => (
+                <TouchableOpacity
+                  key={index}
                   style={{
-                    color: "#fff"
+                    padding: 8,
+                    borderRadius: 8,
+                    borderWidth: 1,
+                    borderColor: "#fff",
+                    margin: 5
                   }}
+                  onPress={() =>
+                    this.props.navigation.navigate("NewsHeadLine", {
+                      source: `country=${data.value}`,
+                      code: data.value,
+                      country: data.name
+                    })
+                  }
                 >
-                  {data.name}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </Area>
-          <HorizontalLine />
-          <NormalText style={{ marginBottom: 10 }}>Sources</NormalText>
-          <Area>
-            {data.sources.map((data, index) => (
-              <TouchableOpacity
-                key={index}
-                style={{
-                  padding: 8,
-                  borderRadius: 8,
-                  borderWidth: 1,
-                  borderColor: "#fff",
-                  margin: 5
-                }}
-                onPress={() =>
-                  this.props.navigation.navigate("NewsHeadLine", {
-                    source: `sources=${data.value}`,
-                    country: data.name
-                  })
-                }
-              >
-                <Text
+                  <Text
+                    style={{
+                      color: "#fff"
+                    }}
+                  >
+                    {data.name}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </Section>
+
+            <HorizontalLine />
+            <NormalText>Sources</NormalText>
+
+            <Section>
+              {data.sources.map((data, index) => (
+                <TouchableOpacity
+                  key={index}
                   style={{
-                    color: "#fff"
+                    padding: 8,
+                    borderRadius: 8,
+                    borderWidth: 1,
+                    borderColor: "#fff",
+                    margin: 5
                   }}
+                  onPress={() =>
+                    this.props.navigation.navigate("NewsHeadLine", {
+                      source: `sources=${data.value}`,
+                      country: data.name
+                    })
+                  }
                 >
-                  {data.name}
-                </Text>
-              </TouchableOpacity>
-            ))}
+                  <Text
+                    style={{
+                      color: "#fff"
+                    }}
+                  >
+                    {data.name}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </Section>
           </Area>
         </ScrollView>
       </ViewArea>
