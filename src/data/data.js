@@ -102,4 +102,16 @@ export const category = [
   { name: "technology" }
 ];
 
-export const sources = [{ name: "BBC NEWS", value: "bbc-news" }];
+export const sources = [
+  { name: "Axios", value: "axios" },
+  { name: "BBC NEWS", value: "bbc-news" },
+  { name: "CNN", value: "cnn" },
+  { name: "ESPN", value: "espn" },
+  { name: "Financial Times", value: "financial-times" },
+  { name: "Google News India", value: "google-news-in" },
+  { name: "NBC News", value: "nbc-news" },
+  { name: "New York Magazine", value: "new-york-magazine" },
+  { name: "RT", value: "rt" },
+  { name: "The New York Times", value: "the-times-of-india" },
+  { name: "The Wall Street Journal", value: "the-wall-street-journal" }
+];
