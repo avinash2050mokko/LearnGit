@@ -18,7 +18,7 @@ export default class OulLineButton extends React.Component {
   render() {
     const { label, code } = this.props;
     return (
-      <BG onPress={console.log("Push")}>
+      <BG>
         <Label>{label}</Label>
       </BG>
     );

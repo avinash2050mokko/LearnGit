@@ -12,9 +12,13 @@ const ScreenArea = styled.View`
 `;
 
 const Area = styled.View`
-  justify-content: center;
-  align-items: center;
   flex-direction: row;
+`;
+
+const HorizontalLine = styled.View`
+  border-bottom-width: 1px;
+  border-color: #000;
+  padding-top: 35px;
 `;
 
 const CategoryLabel = styled.Text`
@@ -28,8 +32,7 @@ const CategoryLabel = styled.Text`
 export default class NewsHeadLineCard extends React.Component {
   render() {
     const { title, imageUrl, time } = this.props;
-    console.log("Time is ", time);
-    console.log("Time", moment(time).fromNow());
+
     return (
       <ScreenArea>
         <Area>
@@ -54,6 +57,7 @@ export default class NewsHeadLineCard extends React.Component {
         >
           {moment(time).fromNow()}
         </Text>
+        <HorizontalLine />
       </ScreenArea>
     );
   }

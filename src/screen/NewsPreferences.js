@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
-import OutLineButton from "../components/OulLineButton";
 import * as data from "../data/data";
 import { ScrollView } from "react-native";
 
@@ -43,7 +42,6 @@ export default class NewsPreferences extends Component {
   };
 
   render() {
-    console.log("Navigation", this.props);
     return (
       <ViewArea>
         <NormalText style={{ marginBottom: 10 }}>Select Country</NormalText>

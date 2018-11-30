@@ -20,9 +20,7 @@ const Label = styled.Text`
 
 export default props => {
   const { label, weight, ...rest } = props;
-  console.log(
-    `Props is ${label} weight ${weight} and the rest is ${JSON.stringify(rest)}`
-  );
+
   let content;
   content = (
     <Label style={{ fontWeight: weight ? weight : "normal" }}>{label}</Label>
