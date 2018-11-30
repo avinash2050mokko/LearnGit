@@ -3,8 +3,9 @@ import { Image, Text, View } from "react-native";
 import styled from "styled-components";
 import moment from "moment";
 
+import { Ionicons } from "@expo/vector-icons";
+
 const ScreenArea = styled.View`
-  margin: 5px 10px;
   align-items: center;
   border-radius: 8px;
   background-color: #fff;
@@ -15,10 +16,12 @@ const Area = styled.View`
   flex-direction: row;
 `;
 
-const HorizontalLine = styled.View`
-  border-bottom-width: 1px;
-  border-color: #000;
-  padding-top: 35px;
+const TimeArea = styled.View`
+  flex-direction: row;
+  align-self: flex-end;
+  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
 `;
 
 const CategoryLabel = styled.Text`
@@ -38,26 +41,33 @@ export default class NewsHeadLineCard extends React.Component {
         <Area>
           <Image
             style={{
-              width: imageUrl === null ? 0 : 75,
-              height: imageUrl === null ? 0 : 75,
+              width: imageUrl === null ? 0 : 100,
+              height: imageUrl === null ? 0 : 100,
               marginRight: imageUrl === null ? 0 : 20
-              //Some thing has change
             }}
             source={{ uri: `${imageUrl}` }}
           />
           <CategoryLabel>{title ? title : "No Title"}</CategoryLabel>
         </Area>
-        <Text
+        <TimeArea>
+          <Ionicons name={"md-time"} size={16} color={"#aaa"} />
+
+          <Text
+            style={{
+              color: "#aaa",
+              marginLeft: 5
+            }}
+          >
+            {moment(time).fromNow()}
+          </Text>
+        </TimeArea>
+        <View
           style={{
-            alignSelf: "flex-end",
-            paddingTop: 30,
-            paddingBottom: 10,
-            color: "#aaa"
+            borderBottomWidth: 1,
+            borderColor: "#efefef",
+            width: "100%"
           }}
-        >
-          {moment(time).fromNow()}
-        </Text>
-        <HorizontalLine />
+        />
       </ScreenArea>
     );
   }
