@@ -1,15 +1,15 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator } from 'react-navigation'
 
-import IntroScreen from "./screen/IntroScreen";
-import NewsPreferences from "./screen/NewsPreferences";
-import NewsHeadLine from "./screen/NewsHeadLine";
+import IntroScreen from './screen/IntroScreen'
+import NewsPreferences from './screen/NewsPreferences'
+import NewsHeadLine from './screen/NewsHeadLine'
 
 export default createStackNavigator(
   {
     NewsPreferences: {
       screen: NewsPreferences,
       navigationOptions: {
-        title: "New Preferences"
+        title: 'New Preferences'
       }
     },
     NewsHeadLine: {
@@ -17,6 +17,6 @@ export default createStackNavigator(
     }
   },
   {
-    initialRouteName: "NewsPreferences"
+    initialRouteName: 'NewsPreferences'
   }
-);
+)

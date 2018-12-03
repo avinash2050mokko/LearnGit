@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const BG = styled.TouchableOpacity`
   padding: 12px 12px;
@@ -10,20 +10,20 @@ const BG = styled.TouchableOpacity`
     props.backgroundColor
       ? props.theme.colors[props.backgroundColor]
       : props.theme.colors.secondary};
-`;
+`
 
 const Label = styled.Text`
   font-size: 16px;
   color: ${props =>
     props.color ? props.theme.colors[props.color] : props.theme.colors.white};
-`;
+`
 
 export default props => {
-  const { label, weight, ...rest } = props;
+  const { label, weight, ...rest } = props
 
-  let content;
+  let content
   content = (
-    <Label style={{ fontWeight: weight ? weight : "normal" }}>{label}</Label>
-  );
-  return <BG>{content}</BG>;
-};
+    <Label style={{ fontWeight: weight ? weight : 'normal' }}>{label}</Label>
+  )
+  return <BG>{content}</BG>
+}
